@@ -67,3 +67,45 @@ All experiments are conducted under identical training settings for fair compari
 
 ```text
 Value > Query > Key
+
+
+---
+
+## How to Run
+
+All runnable scripts are located in the `RUNS/` directory.  
+Each script corresponds to a specific stage of training or evaluation and can be executed directly from the command line.
+
+### Training
+
+The following script trains the model using LoRA.  
+You can control which attention projections (Query / Key / Value) receive LoRA by toggling the corresponding flags.
+
+**`RUNS/train.sh`**
+```bash
+export CUDA_VISIBLE_DEVICES=0
+
+python train.py \
+  --train_epochs 3 \
+  --train_batch 4 \
+  --model_name Qwen/Qwen2.5-1.5B-Instruct \
+  --lora_rank 8 \
+  --lora_alpha 16 \
+  --use_lora 1 \
+  --lora_q 1 \
+  --lora_k 1 \
+  --lora_v 1
+  --lora_v 1
+
+
+
+
+
+
+
+
+
+
+
+
+
