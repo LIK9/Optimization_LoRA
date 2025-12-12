@@ -95,7 +95,6 @@ python train.py \
   --lora_q 1 \
   --lora_k 1 \
   --lora_v 1
-  --lora_v 1
 ```
 ### Evaluation
 
